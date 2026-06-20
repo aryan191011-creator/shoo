@@ -3,318 +3,745 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>S.K. Makeup Studio — Bridal Booking Sample</title>
-  <meta name="description" content="Premium bridal makeup booking landing page sample for S.K. Makeup Studio." />
+
+  <title>S.K. Makeup Studio | Bridal Booking Sample</title>
+  <meta name="description" content="Premium bridal makeup booking website sample for S.K. Makeup Studio." />
+
   <style>
-    :root{
-      --cream:#fff7ee;
-      --cream2:#fffaf5;
-      --gold:#c99a35;
-      --rose:#d75b82;
-      --dark:#151212;
-      --muted:#6d6262;
-      --soft:#f7dce5;
-      --card:rgba(255,255,255,.72);
-      --shadow:0 24px 80px rgba(68,34,36,.14);
-      --radius:28px;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      color:var(--dark);
+
+    :root {
+      --bg: #fff7ef;
+      --bg2: #fff1f6;
+      --dark: #171214;
+      --muted: #6d5f64;
+      --gold: #c99a35;
+      --pink: #d75b82;
+      --pink2: #b93f69;
+      --card: rgba(255, 255, 255, 0.78);
+      --border: rgba(201, 154, 53, 0.22);
+      --shadow: 0 24px 70px rgba(76, 37, 47, 0.14);
+      --radius: 28px;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: var(--dark);
       background:
-        radial-gradient(circle at 10% 10%, rgba(215,91,130,.25), transparent 28%),
-        radial-gradient(circle at 90% 0%, rgba(201,154,53,.18), transparent 30%),
-        linear-gradient(135deg,var(--cream),var(--cream2));
-      overflow-x:hidden;
+        radial-gradient(circle at top left, rgba(215, 91, 130, 0.22), transparent 28%),
+        radial-gradient(circle at top right, rgba(201, 154, 53, 0.18), transparent 30%),
+        linear-gradient(135deg, var(--bg), var(--bg2));
+      min-height: 100vh;
+      overflow-x: hidden;
     }
-    .nav{
-      position:sticky;top:0;z-index:50;
-      backdrop-filter: blur(18px);
-      background:rgba(255,250,245,.75);
-      border-bottom:1px solid rgba(201,154,53,.18);
+
+    html {
+      scroll-behavior: smooth;
     }
-    .nav-inner{
-      max-width:1180px;margin:auto;padding:16px 22px;
-      display:flex;align-items:center;justify-content:space-between;gap:16px;
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.4px}
-    .logo{
-      width:44px;height:44px;border-radius:50%;
-      display:grid;place-items:center;
-      background:linear-gradient(145deg,#fff, #ffe7d0);
-      border:1px solid rgba(201,154,53,.45);
-      color:var(--gold);font-family:Georgia,serif;font-size:22px;
-      box-shadow:0 10px 30px rgba(201,154,53,.16);
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 22px;
     }
-    .nav a{color:var(--dark);text-decoration:none;font-size:14px;font-weight:650}
-    .links{display:flex;gap:20px;align-items:center}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:9px;
-      padding:13px 20px;border-radius:999px;border:0;
-      background:linear-gradient(135deg,var(--rose),#b93765);
-      color:white;text-decoration:none;font-weight:800;
-      box-shadow:0 14px 30px rgba(215,91,130,.26);
-      cursor:pointer;transition:.2s ease;
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 250, 246, 0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
     }
-    .btn:hover{transform:translateY(-2px);box-shadow:0 18px 42px rgba(215,91,130,.32)}
-    .btn.secondary{
-      background:rgba(255,255,255,.68);color:var(--dark);
-      border:1px solid rgba(201,154,53,.25);
-      box-shadow:none;
+
+    .nav-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 16px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
     }
-    .hero{
-      max-width:1180px;margin:0 auto;padding:72px 22px 42px;
-      display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center;
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
     }
-    .badge{
-      display:inline-flex;align-items:center;gap:8px;padding:9px 14px;
-      border-radius:999px;background:rgba(255,255,255,.68);
-      border:1px solid rgba(201,154,53,.22);color:#74521b;font-weight:800;font-size:13px;
+
+    .logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #ffffff, #ffe6ef);
+      border: 1px solid var(--border);
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 22px;
+      box-shadow: 0 12px 30px rgba(201, 154, 53, 0.16);
     }
-    h1{
-      font-family:Georgia, "Times New Roman", serif;
-      font-size:clamp(45px,7vw,82px);
-      line-height:.95;margin:22px 0 18px;
-      letter-spacing:-2px;
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 14px;
+      font-weight: 700;
     }
-    .gold{color:var(--gold)}
-    .lead{font-size:19px;line-height:1.7;color:var(--muted);max-width:650px}
-    .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
-    .stat{
-      background:var(--card);border:1px solid rgba(201,154,53,.18);
-      border-radius:22px;padding:18px;box-shadow:var(--shadow);
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--pink), var(--pink2));
+      color: white;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(215, 91, 130, 0.28);
+      transition: 0.2s ease;
     }
-    .stat strong{font-size:25px;display:block;color:var(--rose)}
-    .stat span{font-size:13px;color:var(--muted);font-weight:700}
-    .visual{
-      background:linear-gradient(145deg,rgba(255,255,255,.75),rgba(255,231,214,.6));
-      border:1px solid rgba(201,154,53,.25);
-      border-radius:36px;padding:18px;box-shadow:var(--shadow);
-      position:relative;
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 42px rgba(215, 91, 130, 0.34);
     }
-    .visual:before{
-      content:"";position:absolute;inset:-12px;border-radius:42px;
-      background:linear-gradient(135deg,rgba(201,154,53,.18),rgba(215,91,130,.16));
-      z-index:-1;filter:blur(10px)
+
+    .btn.secondary {
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--dark);
+      border: 1px solid var(--border);
+      box-shadow: none;
     }
-    .poster{
-      width:100%;border-radius:28px;display:block;
-      box-shadow:0 25px 70px rgba(0,0,0,.14);
-      background:#fff;
+
+    .hero {
+      padding: 72px 0 50px;
     }
-    section{max-width:1180px;margin:auto;padding:58px 22px}
-    .section-title{font-family:Georgia,serif;font-size:clamp(32px,4vw,52px);line-height:1.08;margin:0 0 14px}
-    .section-sub{color:var(--muted);font-size:17px;line-height:1.65;margin:0 0 28px;max-width:760px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{
-      background:var(--card);border:1px solid rgba(201,154,53,.18);
-      border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 44px;
+      align-items: center;
     }
-    .icon{font-size:28px;margin-bottom:14px}
-    .card h3{margin:0 0 10px;font-size:20px}
-    .card p,.card li{color:var(--muted);line-height:1.6}
-    .services .card{min-height:205px}
-    .packages{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
-    .price{font-size:36px;font-weight:900;color:var(--rose);margin:12px 0}
-    ul{padding-left:20px;margin-bottom:0}
-    .featured{
-      transform:translateY(-12px);
-      border:2px solid rgba(201,154,53,.45);
-      background:linear-gradient(160deg,rgba(255,255,255,.88),rgba(255,235,240,.78));
+
+    .badge {
+      display: inline-flex;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid var(--border);
+      color: #7c561a;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 22px;
     }
-    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:step}
-    .step{position:relative}
-    .step:before{
-      counter-increment:step;content:counter(step);
-      width:38px;height:38px;border-radius:50%;
-      display:grid;place-items:center;background:var(--dark);color:#fff;font-weight:900;margin-bottom:14px;
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(44px, 7vw, 82px);
+      line-height: 0.95;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
     }
-    .form-wrap{
-      display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;
-      background:linear-gradient(145deg,rgba(255,255,255,.74),rgba(255,237,242,.62));
-      border:1px solid rgba(201,154,53,.24);
-      border-radius:38px;padding:28px;box-shadow:var(--shadow);
+
+    .gold {
+      color: var(--gold);
     }
-    label{font-weight:800;font-size:13px}
-    input,select,textarea{
-      width:100%;margin-top:8px;margin-bottom:14px;padding:14px 15px;
-      border-radius:16px;border:1px solid rgba(0,0,0,.12);
-      background:rgba(255,255,255,.76);font:inherit;outline:none;
+
+    .lead {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--muted);
+      max-width: 650px;
+      margin-bottom: 28px;
     }
-    textarea{min-height:110px;resize:vertical}
-    .footer{text-align:center;color:var(--muted);padding:34px 22px 60px}
-    .note{
-      font-size:13px;color:var(--muted);line-height:1.6;
-      background:rgba(255,255,255,.58);border:1px solid rgba(201,154,53,.16);
-      border-radius:20px;padding:16px;margin-top:16px;
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
     }
-    .floating{
-      position:fixed;right:18px;bottom:18px;z-index:60;
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
     }
-    .mini-gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .thumb{
-      min-height:130px;border-radius:24px;padding:20px;
-      background:linear-gradient(135deg,rgba(215,91,130,.12),rgba(201,154,53,.13));
-      border:1px solid rgba(201,154,53,.18);
-      display:flex;flex-direction:column;justify-content:flex-end;
+
+    .stat {
+      padding: 18px;
+      border-radius: 22px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
     }
-    .thumb b{font-size:18px}
-    .thumb span{color:var(--muted);font-size:13px;margin-top:4px}
-    @media (max-width:860px){
-      .links{display:none}
-      .hero{grid-template-columns:1fr;padding-top:42px}
-      .grid,.packages,.steps,.form-wrap{grid-template-columns:1fr}
-      .featured{transform:none}
-      .stats{grid-template-columns:1fr}
-      section{padding:42px 18px}
-      .nav-inner{padding:13px 18px}
-      .hero{padding-left:18px;padding-right:18px}
-      .floating .btn{padding:12px 15px;font-size:14px}
+
+    .stat strong {
+      display: block;
+      font-size: 23px;
+      color: var(--pink);
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, rgba(255,255,255,0.78), rgba(255,230,239,0.7));
+      border: 1px solid var(--border);
+      border-radius: 36px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .poster-preview {
+      min-height: 520px;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top right, rgba(201,154,53,0.28), transparent 26%),
+        linear-gradient(145deg, #fff7ef, #ffe0ea);
+      border: 1px solid rgba(201,154,53,0.28);
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .poster-preview::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -70px;
+      bottom: -70px;
+      border-radius: 50%;
+      background: rgba(215,91,130,0.22);
+    }
+
+    .poster-top {
+      position: relative;
+      z-index: 1;
+    }
+
+    .poster-logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      background: white;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .poster-preview h2 {
+      font-family: Georgia, serif;
+      font-size: 44px;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .poster-preview p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .poster-services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .chip {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid var(--border);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .poster-bottom {
+      position: relative;
+      z-index: 1;
+    }
+
+    .limited {
+      display: inline-block;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: var(--dark);
+      color: white;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    section {
+      padding: 58px 0;
+    }
+
+    .section-title {
+      font-family: Georgia, serif;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.08;
+      margin-bottom: 14px;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.65;
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 14px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 14px;
+    }
+
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .price {
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--pink);
+      margin: 12px 0;
+    }
+
+    .featured {
+      transform: translateY(-10px);
+      border: 2px solid rgba(201,154,53,0.45);
+      background: linear-gradient(160deg, rgba(255,255,255,0.92), rgba(255,232,241,0.82));
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      counter-reset: step;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: var(--dark);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .form-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+      padding: 28px;
+      border-radius: 38px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.78), rgba(255,231,239,0.64));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px 15px;
+      border-radius: 16px;
+      border: 1px solid rgba(0,0,0,0.14);
+      background: rgba(255,255,255,0.76);
+      font: inherit;
+      outline: none;
+      margin-bottom: 14px;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .note {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--muted);
+      background: rgba(255,255,255,0.62);
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: 20px;
+      margin-top: 16px;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 34px 22px 60px;
+      line-height: 1.7;
+    }
+
+    .floating {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 20;
+    }
+
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 42px 0 34px;
+      }
+
+      .hero-grid,
+      .grid,
+      .packages,
+      .steps,
+      .form-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .featured {
+        transform: none;
+      }
+
+      .poster-preview {
+        min-height: 460px;
+      }
+
+      section {
+        padding: 42px 0;
+      }
+
+      .floating .btn {
+        padding: 12px 15px;
+        font-size: 14px;
+      }
     }
   </style>
 </head>
+
 <body>
   <nav class="nav">
     <div class="nav-inner">
-      <div class="brand"><div class="logo">S.K.</div><span>S.K. Makeup Studio</span></div>
-      <div class="links">
+      <div class="brand">
+        <div class="logo">S.K.</div>
+        <span>S.K. Makeup Studio</span>
+      </div>
+
+      <div class="nav-links">
         <a href="#services">Services</a>
         <a href="#packages">Packages</a>
         <a href="#booking">Book Slot</a>
       </div>
-      <a class="btn secondary" href="#booking">Free Bridal Enquiry</a>
+
+      <a class="btn secondary" href="#booking">Free Enquiry</a>
     </div>
   </nav>
 
   <main class="hero">
-    <div>
-      <div class="badge">✨ Premium Bridal & Beauty Studio Sample</div>
-      <h1>Book your <span class="gold">Bridal Look</span> with confidence.</h1>
-      <p class="lead">
-        S.K. Makeup Studio ke liye premium sample landing page — bridal makeup, party makeup, hair styling aur beauty services ko professional way me show karne ke liye.
-      </p>
-      <div class="hero-actions">
-        <a class="btn" href="#booking">Book Your Slot Today</a>
-        <a class="btn secondary" href="#packages">View Packages</a>
-      </div>
-      <div class="stats">
-        <div class="stat"><strong>Bridal</strong><span>Makeup Focus</span></div>
-        <div class="stat"><strong>DM/Form</strong><span>Easy Booking</span></div>
-        <div class="stat"><strong>Premium</strong><span>Trust Look</span></div>
-      </div>
-    </div>
-    <div class="visual">
-      <img class="poster" src="assets/sk_makeup_sample_poster.png" alt="S.K. Makeup Studio sample bridal poster" onerror="this.style.display='none';document.querySelector('.fallback').style.display='block'">
-      <div class="fallback" style="display:none;padding:80px 24px;text-align:center;border-radius:28px;background:#fff;">
-        <h2>S.K. Makeup Studio</h2><p>Premium Bridal Poster Preview</p>
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="badge">✨ Premium Bridal & Beauty Studio Sample</div>
+
+          <h1>
+            Book your <span class="gold">Bridal Look</span> with confidence.
+          </h1>
+
+          <p class="lead">
+            S.K. Makeup Studio ke liye premium sample landing page — bridal makeup,
+            party makeup, hair styling aur beauty services ko professional way me
+            show karne ke liye.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn" href="#booking">Book Your Slot Today</a>
+            <a class="btn secondary" href="#packages">View Packages</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>Bridal</strong>
+              <span>Makeup Focus</span>
+            </div>
+            <div class="stat">
+              <strong>DM/Form</strong>
+              <span>Easy Booking</span>
+            </div>
+            <div class="stat">
+              <strong>Premium</strong>
+              <span>Trust Look</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="poster-preview">
+            <div class="poster-top">
+              <div class="poster-logo">S.K.</div>
+              <h2>Book Your Bridal Look ✨</h2>
+              <p>
+                Make your special day more beautiful with a premium makeup look.
+              </p>
+
+              <div class="poster-services">
+                <span class="chip">Bridal Makeup</span>
+                <span class="chip">Party Makeup</span>
+                <span class="chip">Hair Styling</span>
+                <span class="chip">Beauty Services</span>
+              </div>
+            </div>
+
+            <div class="poster-bottom">
+              <div class="limited">Limited Bridal Slots Available</div>
+              <br />
+              <a class="btn" href="#booking">Book Your Slot Today</a>
+              <p style="margin-top: 16px;">
+                DM to Book / Your Number Here<br />
+                Hathras / Your Location Here
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </main>
 
-  <section id="services" class="services">
-    <h2 class="section-title">Services that customers understand quickly</h2>
-    <p class="section-sub">Page ka goal simple hai: bride/customer ko services, booking, location aur enquiry option clear dikhe.</p>
-    <div class="grid">
-      <div class="card"><div class="icon">👰</div><h3>Bridal Makeup</h3><p>Premium bridal look booking, event-date enquiry aur slot confirmation.</p></div>
-      <div class="card"><div class="icon">💄</div><h3>Party Makeup</h3><p>Engagement, party, reception aur function-ready makeup service showcase.</p></div>
-      <div class="card"><div class="icon">✨</div><h3>Hair & Beauty</h3><p>Hair styling, beauty services, nails or skin-related service highlights.</p></div>
-    </div>
-  </section>
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Services that customers understand quickly</h2>
+      <p class="section-sub">
+        Page ka goal simple hai: bride/customer ko services, booking, location aur
+        enquiry option clear dikhe.
+      </p>
 
-  <section>
-    <h2 class="section-title">Sample work layout</h2>
-    <p class="section-sub">Client ko ek hi page me clear proof milta hai ki studio ka online look premium ban sakta hai.</p>
-    <div class="mini-gallery">
-      <div class="thumb"><b>Bridal Booking Poster</b><span>Instagram post / story / WhatsApp status</span></div>
-      <div class="thumb"><b>Package Page</b><span>Bridal, party and beauty service details</span></div>
-      <div class="thumb"><b>Review QR Poster</b><span>Happy clients se reviews collect karne ke liye</span></div>
-      <div class="thumb"><b>Booking Form</b><span>Name, phone, event date, service needed</span></div>
+      <div class="grid">
+        <div class="card">
+          <div class="icon">👰</div>
+          <h3>Bridal Makeup</h3>
+          <p>Premium bridal look booking, event-date enquiry aur slot confirmation.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">💄</div>
+          <h3>Party Makeup</h3>
+          <p>Engagement, party, reception aur function-ready makeup service showcase.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">✨</div>
+          <h3>Hair & Beauty</h3>
+          <p>Hair styling, beauty services, nails or skin-related service highlights.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="packages">
-    <h2 class="section-title">Suggested setup packages</h2>
-    <p class="section-sub">Ye sample pricing hai. Exact package client ki need ke हिसाब से update ho sakta hai.</p>
-    <div class="packages">
-      <div class="card">
-        <h3>Starter Setup</h3>
-        <div class="price">₹999</div>
-        <ul>
-          <li>5 posters</li>
-          <li>Instagram bio improvement</li>
-          <li>WhatsApp booking script</li>
-          <li>Review QR poster</li>
-        </ul>
-      </div>
-      <div class="card featured">
-        <h3>Growth Setup</h3>
-        <div class="price">₹2999</div>
-        <ul>
-          <li>10 posters</li>
-          <li>Mini bridal booking page</li>
-          <li>WhatsApp scripts</li>
-          <li>7-day content plan</li>
-          <li>Full audit</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Monthly Support</h3>
-        <div class="price">₹1499+</div>
-        <ul>
-          <li>Weekly posters</li>
-          <li>Offer updates</li>
-          <li>Booking captions</li>
-          <li>Monthly improvement report</li>
-        </ul>
+    <div class="container">
+      <h2 class="section-title">Suggested setup packages</h2>
+      <p class="section-sub">
+        Ye sample pricing hai. Exact package client ki need ke hisaab se update ho sakta hai.
+      </p>
+
+      <div class="packages">
+        <div class="card">
+          <h3>Starter Setup</h3>
+          <div class="price">₹999</div>
+          <ul>
+            <li>5 posters</li>
+            <li>Instagram bio improvement</li>
+            <li>WhatsApp booking script</li>
+            <li>Review QR poster</li>
+          </ul>
+        </div>
+
+        <div class="card featured">
+          <h3>Growth Setup</h3>
+          <div class="price">₹2999</div>
+          <ul>
+            <li>10 posters</li>
+            <li>Mini bridal booking page</li>
+            <li>WhatsApp scripts</li>
+            <li>7-day content plan</li>
+            <li>Full audit</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Monthly Support</h3>
+          <div class="price">₹1499+</div>
+          <ul>
+            <li>Weekly posters</li>
+            <li>Offer updates</li>
+            <li>Booking captions</li>
+            <li>Monthly improvement report</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <section>
-    <h2 class="section-title">How booking flow works</h2>
-    <div class="steps">
-      <div class="card step"><h3>Customer visits page</h3><p>Services, location and booking CTA clear dikhta hai.</p></div>
-      <div class="card step"><h3>Form fill karta hai</h3><p>Name, phone, event date and service needed submit hota hai.</p></div>
-      <div class="card step"><h3>Studio contacts</h3><p>WhatsApp/call par package and slot confirm ho sakta hai.</p></div>
-      <div class="card step"><h3>Review collect</h3><p>Service ke baad QR se Google/Instagram review collect.</p></div>
+    <div class="container">
+      <h2 class="section-title">How booking flow works</h2>
+      <p class="section-sub">
+        Ye sample page customer ko booking/enquiry ka clear path deta hai.
+      </p>
+
+      <div class="steps">
+        <div class="card step">
+          <h3>Customer visits page</h3>
+          <p>Services, location and booking CTA clear dikhta hai.</p>
+        </div>
+
+        <div class="card step">
+          <h3>Form fill karta hai</h3>
+          <p>Name, phone, event date and service needed submit hota hai.</p>
+        </div>
+
+        <div class="card step">
+          <h3>Studio contacts</h3>
+          <p>WhatsApp/call par package and slot confirm ho sakta hai.</p>
+        </div>
+
+        <div class="card step">
+          <h3>Review collect</h3>
+          <p>Service ke baad QR se Google/Instagram review collect.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="booking">
-    <div class="form-wrap">
-      <div>
-        <h2 class="section-title">Free bridal enquiry</h2>
-        <p class="section-sub">Ye sample form hai. Real website me submissions email/Google Sheet/backend me save kiye ja sakte hain.</p>
-        <div class="note">
-          Note: This is a sample demo page created for layout approval. Contact number, location, photos and packages can be updated after client confirmation.
+    <div class="container">
+      <div class="form-wrap">
+        <div>
+          <h2 class="section-title">Free bridal enquiry</h2>
+          <p class="section-sub">
+            Ye sample form hai. Real website me submissions email, Google Sheet ya backend me save kiye ja sakte hain.
+          </p>
+
+          <div class="note">
+            Note: This is a sample demo page created for layout approval.
+            Contact number, location, real photos and packages can be updated after client confirmation.
+          </div>
         </div>
+
+        <form onsubmit="event.preventDefault(); alert('Sample enquiry submitted! Final website me ye lead save ho sakti hai.');">
+          <label>Name</label>
+          <input type="text" placeholder="Your name" required />
+
+          <label>Phone</label>
+          <input type="tel" placeholder="Your phone number" required />
+
+          <label>Service Needed</label>
+          <select>
+            <option>Bridal Makeup</option>
+            <option>Party Makeup</option>
+            <option>Hair Styling</option>
+            <option>Beauty Services</option>
+          </select>
+
+          <label>Event Date</label>
+          <input type="date" />
+
+          <label>Message</label>
+          <textarea placeholder="Tell us your event details"></textarea>
+
+          <button class="btn" type="submit">Submit Enquiry</button>
+        </form>
       </div>
-      <form onsubmit="event.preventDefault(); alert('Sample form submitted! Real website me ye lead save ho sakti hai.');">
-        <label>Name</label>
-        <input placeholder="Your name" />
-        <label>Phone</label>
-        <input placeholder="Your phone number" />
-        <label>Service Needed</label>
-        <select>
-          <option>Bridal Makeup</option>
-          <option>Party Makeup</option>
-          <option>Hair Styling</option>
-          <option>Beauty Services</option>
-        </select>
-        <label>Event Date</label>
-        <input type="date" />
-        <label>Message</label>
-        <textarea placeholder="Tell us your event details"></textarea>
-        <button class="btn" type="submit">Submit Enquiry</button>
-      </form>
     </div>
   </section>
 
-  <div class="floating"><a class="btn" href="#booking">Book Slot</a></div>
+  <div class="floating">
+    <a class="btn" href="#booking">Book Slot</a>
+  </div>
 
   <footer class="footer">
     <strong>S.K. Makeup Studio</strong><br />
